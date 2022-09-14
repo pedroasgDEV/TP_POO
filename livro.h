@@ -43,9 +43,6 @@ public:
     //Keywords
     list<string> getKeywords() { return keywords; }
     void setKeywords(list<string> key) { keywords = key; }
-
-    //Sobrecargas
-    friend ostream& operator<<(ostream&, Impresso&);
 };
 
 

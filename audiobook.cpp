@@ -1,12 +1,10 @@
-#include "audiobook.h"
+//#include "audiobook.h"
+#include "classes.h"
 
 Audiobook::Audiobook(const list<string>& esc, const string& t, const list<string>& cap, const int& ano,
                     const string& idi, const list<string>& key, float dur, string format):
-                    Livro(esc, t, cap, ano, idi, key){
-
-                    
-
-                }
+                    Livro(esc, t, cap, ano, idi, key){ setDuracao(dur); setformatoAudio(format); }
+Audiobook::~Audiobook(){}
 
 //Duraçaõ
 float Audiobook::getDuracao(){
@@ -24,14 +22,4 @@ string Audiobook::getformatoAudio(){
 
 void Audiobook::setformatoAudio(string format){
     formatoAudio = format;
-}
-
-//?= Terminar sobrecarga do operador "<<"
-//sobrecarga
-ostream& operator<<(ostream& out, Audiobook& ele){
-    out << "Escritores";
-    for(auto elem : ele.getEscritores())
-        out << elem << " ";
-    out << endl;
-
 }

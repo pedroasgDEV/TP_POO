@@ -119,7 +119,7 @@ int main(){
     //for(auto item : yearSort(livros, "EPUB")) cout << static_cast<Livro>(*item) << endl;
 
     //Questão j
-    imprimeVector(livros, 0);
+    //imprimeVector(livros, 0);
 
 
     //Liberar vetor de ponteiros

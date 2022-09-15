@@ -125,7 +125,7 @@ vector<Livro*> idiomaBusca(vector<Livro*> livros, string idioma); //Retorna um v
 vector<Eletronico*> yearSort(vector<Livro*> livros, string format); //Retorna um vetor de livros eletronicos em formato especificado ordenado pelo ano de publicaçaõ
 
 //J
-void imprimeVector(vector<Livro*> livros, int esc); //Imprime no terminal ou em um arquivo todos os livros de uma coleção
+void imprimeVector(vector<Livro*> livros, int); //Imprime no terminal ou em um arquivo todos os livros de uma coleção
 
 
 

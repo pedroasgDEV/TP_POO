@@ -1,6 +1,7 @@
 //#include "audiobook.h"
 #include "classes.h"
 
+//Construtor e destrutor
 Audiobook::Audiobook(const list<string>& esc, const string& t, const list<string>& cap, const int& ano,
                     const string& idi, const list<string>& key, float dur, string format):
                     Livro(esc, t, cap, ano, idi, key){ setDuracao(dur); setformatoAudio(format); }
@@ -24,7 +25,7 @@ void Audiobook::setformatoAudio(string format){
     formatoAudio = format;
 }
 
-//Sobrecarga de operadores
+//Sobrecarga de operadore
 ostream& operator<<(ostream& out, const Audiobook& aud){
 
     out << static_cast<Livro>(aud);

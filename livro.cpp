@@ -32,7 +32,7 @@ void Livro::setIdiomaOriginal(string idi) { idiomaOriginal = idi; }
 list<string> Livro::getKeywords() { return keywords; }
 void Livro::setKeywords(list<string> key) { keywords = key; }
 
-//Sobre carga operador
+//Sobrecarga operador
 ostream& operator<<(ostream& out, const Livro& liv){
 
     //Imprimir titulo

@@ -1,6 +1,7 @@
 //#include "impresso.h"
 #include "classes.h"
 
+//Construtor e destrutor
 Impresso::Impresso(const list<string>& esc, const string& t, const list<string>& cap, const int& ano,
                     const string& idi, const list<string>& key, list<string> livs, int cols):
                     Livro(esc, t, cap, ano, idi, key){ setLivrarias(livs); setColunas(cols); }

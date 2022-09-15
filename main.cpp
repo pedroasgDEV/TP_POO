@@ -12,7 +12,7 @@ using namespace std;
 
 //Prototipo das funções
 Livro* newClass(string arqName);
-void split(const string&, list<string>&, char);
+void split(const string&, vector<string>&, char);
 
 //Funções
 //Leitura do aquivo e criação dos objs
@@ -20,7 +20,7 @@ Livro* newClass(string arqName){
     //Variaveis
     int type, ano, cols; 
     string titulo, idioma, aux, url, formatEle, FormatAud; 
-    list<string> escritores, capitulos, keywords, livrarias;
+    vector<string> escritores, capitulos, keywords, livrarias;
     float dur;
     Livro* livro;
 
@@ -99,7 +99,7 @@ Livro* newClass(string arqName){
 }
 
 //Separa de strings com ;
-void split(const string& str, list<string>& cont, char delim){
+void split(const string& str, vector<string>& cont, char delim){
     stringstream ss(str);
     string token;
     while (getline(ss, token, delim)) cont.push_back(token);
@@ -123,7 +123,7 @@ int main(){
     //else cout << "Não há um audio book com esse autor\n";
 
     //Questão j
-    //imprimeVector(livros, 0);
+    imprimeVector(livros, 0);
 
 
     //Liberar vetor de ponteiros

@@ -1,34 +1,33 @@
-#ifndef LIVRO_H
-#define LIVR0_H
+#ifndef CLASSES_H
+#define CLASSES_H
 
 //Bibliotecas
 #include <iostream>
-#include <list>
 #include <vector>
 using namespace std;
 
 //Super Classe
 class Livro{
     //Atributos
-    list<string> escritores, capitulos, keywords;
+    vector<string> escritores, capitulos, keywords;
     string titulo, idiomaOriginal;
-    int anoPublistringcacao;
+    int anoPubvectorringcacao;
 public:
 
     //Construtores e destrutores
-    Livro(list<string> esc, string t, list<string> cap, int ano, string idi, list<string> key);
+    Livro(vector<string> esc, string t, vector<string> cap, int ano, string idi, vector<string> key);
     virtual ~Livro();
 
     //Escritores
-    list<string> getEscritores();
-    void setEscritores(list<string> esc);
+    vector<string> getEscritores();
+    void setEscritores(vector<string> esc);
 
     //Titulo
     string getTitulo();
     void setTitulo(string t);
     //Capitulos
-    list<string> getCapitulos();
-    void setCapitulos(list<string> cap);
+    vector<string> getCapitulos();
+    void setCapitulos(vector<string> cap);
     //Ano de publicaçãp
     int getAnoPublicacao();
     void setAnoPublicacao(int ano);
@@ -37,8 +36,8 @@ public:
     string getIdiomaOriginal();
     void setIdiomaOriginal(string idi);
     //Keywords
-    list<string> getKeywords();
-    void setKeywords(list<string> key);
+    vector<string> getKeywords();
+    void setKeywords(vector<string> key);
 
     //Sobrecarga
     friend ostream& operator<<(ostream&, const Livro&);
@@ -46,19 +45,19 @@ public:
 
 //Subclasse
 class Impresso: public Livro{
-    list<string> livrarias;
+    vector<string> livrarias;
     int colunas;
 
 public:
 
     //Construtores e Destrutores
-    Impresso(const list<string>& esc, const string& t, const list<string>& cap, const int& ano,
-             const string& idi, const list<string>& key, list<string> livs, int cols);
+    Impresso(const vector<string>& esc, const string& t, const vector<string>& cap, const int& ano,
+             const string& idi, const vector<string>& key, vector<string> livs, int cols);
     ~Impresso();
 
     //Livrarias
-    list<string> getLivrarias();
-    void setLivrarias(list<string> livs);
+    vector<string> getLivrarias();
+    void setLivrarias(vector<string> livs);
 
     //Colunas
     int getColunas();
@@ -77,8 +76,8 @@ class Eletronico: public Livro{
 public:
 
     //Construtores e Destrutores
-    Eletronico(const list<string>& esc, const string& t, const list<string>& cap, const int& ano,
-             const string& idi, const list<string>& key, string url, string format);
+    Eletronico(const vector<string>& esc, const string& t, const vector<string>& cap, const int& ano,
+             const string& idi, const vector<string>& key, string url, string format);
     ~Eletronico();
 
     //Url
@@ -101,8 +100,8 @@ class Audiobook: public Livro{
 public:
 
     //Construtores e Destrutores
-    Audiobook(const list<string>& esc, const string& t, const list<string>& cap, const int& ano,
-             const string& idi, const list<string>& key, float dur, string format);
+    Audiobook(const vector<string>& esc, const string& t, const vector<string>& cap, const int& ano,
+             const string& idi, const vector<string>& key, float dur, string format);
     ~Audiobook();
 
     //Duração
@@ -124,12 +123,16 @@ vector<Livro*> idiomaBusca(vector<Livro*> livros, string idioma); //Retorna um v
 //C
 vector<Eletronico*> yearSort(vector<Livro*> livros, string format); //Retorna um vetor de livros eletronicos em formato especificado ordenado pelo ano de publicaçaõ
 
+//D
+
+
 //E
 bool escritorBusca(vector<Livro*> livros, string escritor); //Verifica se algum audiobook de algum escritor
 
 //J
 void imprimeVector(vector<Livro*> livros, int); //Imprime no terminal ou em um arquivo todos os livros de uma coleção
 
+//L
 
 
 

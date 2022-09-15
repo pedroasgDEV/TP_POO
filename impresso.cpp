@@ -2,18 +2,18 @@
 #include "classes.h"
 
 //Construtor e destrutor
-Impresso::Impresso(const list<string>& esc, const string& t, const list<string>& cap, const int& ano,
-                    const string& idi, const list<string>& key, list<string> livs, int cols):
+Impresso::Impresso(const vector<string>& esc, const string& t, const vector<string>& cap, const int& ano,
+                    const string& idi, const vector<string>& key, vector<string> livs, int cols):
                     Livro(esc, t, cap, ano, idi, key){ setLivrarias(livs); setColunas(cols); }
 
 Impresso::~Impresso(){livrarias.clear();}
 
 //Livrarias
-list<string> Impresso::getLivrarias(){
+vector<string> Impresso::getLivrarias(){
     return livrarias;
 }
 
-void Impresso::setLivrarias(list<string> livs){
+void Impresso::setLivrarias(vector<string> livs){
     livrarias = livs;
 }
 
@@ -31,7 +31,7 @@ ostream& operator<<(ostream& out, const Impresso& imp){
 
     out << static_cast<Livro>(imp);
     
-    out << "| ";
+    out << " | ";
 
     //Imprimir  a primeira livraria
     if(imp.livrarias.empty()) out << "Nenhuma";

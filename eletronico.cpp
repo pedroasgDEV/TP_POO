@@ -2,8 +2,8 @@
 #include "classes.h"
 
 //Construtor e destrutor
-Eletronico::Eletronico(const list<string>& esc, const string& t, const list<string>& cap, const int& ano,
-                    const string& idi, const list<string>& key, string url, string format):
+Eletronico::Eletronico(const vector<string>& esc, const string& t, const vector<string>& cap, const int& ano,
+                    const string& idi, const vector<string>& key, string url, string format):
                     Livro(esc, t, cap, ano, idi, key){ setUrl(url); setformatoArquivo(format); }
 Eletronico::~Eletronico(){}
 
@@ -30,7 +30,7 @@ ostream& operator<<(ostream& out, const Eletronico& ele){
 
     out << static_cast<Livro>(ele);
 
-    out << "| ";
+    out << " | ";
 
     //Imprimir o formato do arquivo
     if(ele.formatoArquivo.size() > 10) for(int i = 0; i < 10; i++) 

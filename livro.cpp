@@ -1,7 +1,7 @@
 #include "classes.h"
 
 //Construtor e destrutor
-Livro::Livro(list<string> esc, string t, list<string> cap, int ano, string idi, list<string> key){
+Livro::Livro(vector<string> esc, string t, vector<string> cap, int ano, string idi, vector<string> key){
         setEscritores(esc); setTitulo(t); setCapitulos(cap); setAnoPublicacao(ano);
         setIdiomaOriginal(idi); setKeywords(key);
     }
@@ -9,28 +9,28 @@ Livro::Livro(list<string> esc, string t, list<string> cap, int ano, string idi, 
 Livro::~Livro(){escritores.clear(); capitulos.clear(); keywords.clear();}
 
 //escritores
-list<string> Livro::getEscritores(){ return escritores; }
-void Livro::setEscritores(list<string> esc){ escritores = esc; }
+vector<string> Livro::getEscritores(){ return escritores; }
+void Livro::setEscritores(vector<string> esc){ escritores = esc; }
 
 //Titulo
 string Livro::getTitulo(){ return titulo; }
 void Livro::setTitulo(string t){ titulo = t;}
 
 //Capitulos
-list<string> Livro::getCapitulos(){ return capitulos; }
-void Livro::setCapitulos(list<string> cap) { capitulos = cap; }
+vector<string> Livro::getCapitulos(){ return capitulos; }
+void Livro::setCapitulos(vector<string> cap) { capitulos = cap; }
 
 //Ano de publicaçãp
-int Livro::getAnoPublicacao() { return anoPublistringcacao; }
-void Livro::setAnoPublicacao(int ano) { anoPublistringcacao = ano; }
+int Livro::getAnoPublicacao() { return anoPubvectorringcacao; }
+void Livro::setAnoPublicacao(int ano) { anoPubvectorringcacao = ano; }
 
 //Idioma Original
 string Livro::getIdiomaOriginal() { return idiomaOriginal; }
 void Livro::setIdiomaOriginal(string idi) { idiomaOriginal = idi; }
 
 //Keywords
-list<string> Livro::getKeywords() { return keywords; }
-void Livro::setKeywords(list<string> key) { keywords = key; }
+vector<string> Livro::getKeywords() { return keywords; }
+void Livro::setKeywords(vector<string> key) { keywords = key; }
 
 //Sobrecarga operador
 ostream& operator<<(ostream& out, const Livro& liv){
@@ -51,7 +51,7 @@ ostream& operator<<(ostream& out, const Livro& liv){
     if(liv.idiomaOriginal.size() > 10) for(int i = 0; i < 10; i++) out << liv.idiomaOriginal[i];
     else out << liv.idiomaOriginal;
 
-    out << " |";
+    out << " | ";
 
     //Imprimir o numero de capitulos
     int tam = liv.capitulos.size();

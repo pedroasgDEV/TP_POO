@@ -118,6 +118,10 @@ int main(){
     //Questão C
     //for(auto item : yearSort(livros, "EPUB")) cout << static_cast<Livro>(*item) << endl;
 
+    //Questão E
+    //if(escritorBusca(livros, "John Ronald Reuel Tolkien")) cout << "Há um audio book com esse autor\n";
+    //else cout << "Não há um audio book com esse autor\n";
+
     //Questão j
     //imprimeVector(livros, 0);
 

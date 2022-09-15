@@ -17,7 +17,7 @@ vector<Livro*> idiomaBusca(vector<Livro*> livros, string idioma){
     return temp;
 }
 
-//C: //Retorna um vetor de livros eletronicos em formato especificado ordenado pelo ano de publicação
+//C: Retorna um vetor de livros eletronicos em formato especificado ordenado pelo ano de publicação
 vector<Eletronico*> yearSort(vector<Livro*> livros, string format){
     vector<Eletronico*> temp; 
 
@@ -35,31 +35,42 @@ vector<Eletronico*> yearSort(vector<Livro*> livros, string format){
 
 }
 
-//J: //Imprime no terminal ou em um arquivo todos os livros de uma coleção
+//E: Verifica se algum audiobook de algum escritor
+bool escritorBusca(vector<Livro*> livros, string escritor){
+    //Lê todos os item do vetor
+    for(auto item : livros)
+        if(typeid(*item) == typeid(class Audiobook)) //Filtra os audiobook
+            for(auto item2 : item->getEscritores()) if(item2 == escritor) return true; //Procura pelo escritor 
+
+    return false;   
+}
+
+//J: Imprime no terminal ou em um arquivo todos os livros de uma coleção
 void imprimeVector(vector<Livro*> livros, int esc){
     //0 - se for para imprimir no terminal
     //1 - se for para imprimir no arquivo
 
+    //Se for no terminal
     if(!esc)
-        for(auto item : livros){
-            if(typeid(*item) == typeid(class Impresso))
+        for(auto item : livros){ 
+            if(typeid(*item) == typeid(class Impresso)) //Se for um livro impresso
                 cout << *(dynamic_cast<Impresso*>(item)) << endl;
 
-            else if(typeid(*item) == typeid(class Eletronico))
+            else if(typeid(*item) == typeid(class Eletronico)) //Se for um livro eletronico
                 cout << *(dynamic_cast<Eletronico*>(item)) << endl;
-            else 
+            else  //Se for um livro audiobook
                 cout << *(dynamic_cast<Audiobook*>(item)) << endl;
         }
-    
+    //Se for o arquivo
     else{
         ofstream arq("saida.txt", ios::out);
         for(auto item : livros){
-            if(typeid(*item) == typeid(class Impresso))
+            if(typeid(*item) == typeid(class Impresso)) //Se for um livro impresso
                 arq << *(dynamic_cast<Impresso*>(item)) << endl;
 
-            else if(typeid(*item) == typeid(class Eletronico))
+            else if(typeid(*item) == typeid(class Eletronico)) //Se for um livro eletronico
                 arq << *(dynamic_cast<Eletronico*>(item)) << endl;
-            else 
+            else //Se for um livro audiobook
                 arq << *(dynamic_cast<Audiobook*>(item)) << endl;
         }
     }

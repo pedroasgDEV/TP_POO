@@ -23,3 +23,18 @@ string Eletronico::getformatoArquivo(){
 void Eletronico::setformatoArquivo(string format){
     formatoArquivo = format;
 }
+
+//Sobre carga operador
+ostream& operator<<(ostream& out, const Eletronico& ele){
+
+    out << static_cast<Livro>(ele);
+
+    out << "| ";
+
+    //Imprimir o formato do arquivo
+    if(ele.formatoArquivo.size() > 10) for(int i = 0; i < 10; i++) 
+        out << ele.formatoArquivo[i];
+    else out << ele.formatoArquivo;
+
+    return out;
+}

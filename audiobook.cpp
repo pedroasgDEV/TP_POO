@@ -23,3 +23,17 @@ string Audiobook::getformatoAudio(){
 void Audiobook::setformatoAudio(string format){
     formatoAudio = format;
 }
+
+ostream& operator<<(ostream& out, const Audiobook& aud){
+
+    out << static_cast<Livro>(aud);
+
+    out << "| ";
+    
+    //Imprimir a duração do arquivo
+    out << fixed;
+    out.precision(2);
+    out << aud.duracao;
+
+    return out;
+}

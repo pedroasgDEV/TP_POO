@@ -32,6 +32,7 @@ void Livro::setIdiomaOriginal(string idi) { idiomaOriginal = idi; }
 list<string> Livro::getKeywords() { return keywords; }
 void Livro::setKeywords(list<string> key) { keywords = key; }
 
+//Sobre carga operador
 ostream& operator<<(ostream& out, const Livro& liv){
 
     //Imprimir titulo
@@ -47,7 +48,7 @@ ostream& operator<<(ostream& out, const Livro& liv){
     out << "|";
 
     //Imprimir idioma 
-    if(liv.titulo.size() > 10) for(int i = 0; i < 10; i++) out << liv.idiomaOriginal[i];
+    if(liv.idiomaOriginal.size() > 10) for(int i = 0; i < 10; i++) out << liv.idiomaOriginal[i];
     else out << liv.idiomaOriginal;
 
     out << " |";

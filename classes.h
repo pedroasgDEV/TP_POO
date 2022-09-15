@@ -6,7 +6,7 @@
 #include <list>
 using namespace std;
 
-//Classe Abstrata
+//Super Classe
 class Livro{
     //Atributos
     list<string> escritores, capitulos, keywords;
@@ -15,41 +15,35 @@ class Livro{
 public:
 
     //Construtores e destrutores
-    Livro(list<string> esc, string t, list<string> cap, int ano, string idi, list<string> key){
-        setEscritores(esc); setTitulo(t); setCapitulos(cap); setAnoPublicacao(ano);
-        setIdiomaOriginal(idi); setKeywords(key);
-    }
-    ~Livro(){escritores.clear(); capitulos.clear(); keywords.clear();}
+    Livro(list<string> esc, string t, list<string> cap, int ano, string idi, list<string> key);
+    virtual ~Livro();
 
     //Escritores
-    list<string> getEscritores(){ return escritores; };
-    void setEscritores(list<string> esc){ escritores = esc; }
+    list<string> getEscritores();
+    void setEscritores(list<string> esc);
 
     //Titulo
-    string getTitulo(){ return titulo; }
-    void setTitulo(string t){ titulo = t;}
-
+    string getTitulo();
+    void setTitulo(string t);
     //Capitulos
-    list<string> getCapitulos(){ return capitulos; }
-    void setCapitulos(list<string> cap){ capitulos = cap; }
-
+    list<string> getCapitulos();
+    void setCapitulos(list<string> cap);
     //Ano de publicaçãp
-    int getAnoPublicacao() { return anoPublistringcacao; }
-    void setAnoPublicacao(int ano) { anoPublistringcacao = ano; }
+    int getAnoPublicacao();
+    void setAnoPublicacao(int ano);
 
     //Idioma Original
-    string getIdiomaOriginal(){ return idiomaOriginal; }
-    void setIdiomaOriginal(string idi) { idiomaOriginal = idi; }
-
+    string getIdiomaOriginal();
+    void setIdiomaOriginal(string idi);
     //Keywords
-    list<string> getKeywords(){ return keywords; }
-    void setKeywords(list<string> key){ keywords = key; }
+    list<string> getKeywords();
+    void setKeywords(list<string> key);
 
     //Sobrecarga
     friend ostream& operator<<(ostream&, const Livro&);
 };
 
-//Classe Concreta
+//Subclasse
 class Impresso: public Livro{
     list<string> livrarias;
     int colunas;
@@ -74,7 +68,7 @@ public:
 
 };
 
-//Classe Concreta
+//Subclasse
 class Eletronico: public Livro{
     string url;
     string formatoArquivo;
@@ -98,7 +92,7 @@ public:
     friend ostream& operator<<(ostream&, Eletronico&);
 };
 
-//Classe Concreta
+//Subclasse
 class Audiobook: public Livro{
     float duracao;
     string formatoAudio;

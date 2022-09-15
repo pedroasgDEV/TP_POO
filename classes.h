@@ -64,7 +64,7 @@ public:
     void setColunas(int cols);
 
     //Sobrecargas
-    friend ostream& operator<<(ostream&, Impresso&);
+    friend ostream& operator<<(ostream&, const Impresso&);
 
 };
 
@@ -89,7 +89,7 @@ public:
     void setformatoArquivo(string format);
 
     //Sobrecargas
-    friend ostream& operator<<(ostream&, Eletronico&);
+    friend ostream& operator<<(ostream&, const Eletronico&);
 };
 
 //Subclasse
@@ -113,7 +113,7 @@ public:
     void setformatoAudio(string format);
 
     //Sobrecargas
-    friend ostream& operator<<(ostream&, Audiobook&);
+    friend ostream& operator<<(ostream&, const Audiobook&);
 };
 
 #endif

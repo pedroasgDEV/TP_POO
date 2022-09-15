@@ -114,6 +114,8 @@ int main(){
     //Lendo os arqulivroivos
     for(char i = 1; i<=16; i++) livros.push_back(newClass("txts/" + to_string(i) + ".txt"));
 
+    cout << *(livros.front()) << endl;
+    
     //Liberar vetor de ponteiros
     for(auto item : livros) delete item;
     livros.clear();

@@ -24,6 +24,7 @@ void Audiobook::setformatoAudio(string format){
     formatoAudio = format;
 }
 
+//Sobrecarga de operadores
 ostream& operator<<(ostream& out, const Audiobook& aud){
 
     out << static_cast<Livro>(aud);

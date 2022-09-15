@@ -24,7 +24,7 @@ void Eletronico::setformatoArquivo(string format){
     formatoArquivo = format;
 }
 
-//Sobre carga operador
+//Sobrecarga operador
 ostream& operator<<(ostream& out, const Eletronico& ele){
 
     out << static_cast<Livro>(ele);

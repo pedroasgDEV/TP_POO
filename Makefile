@@ -4,6 +4,7 @@ all:
 	g++ audiobook.cpp -c -Wall
 	g++ eletronico.cpp -c -Wall
 	g++ livro.cpp -c -Wall
+	g++ funcoes.cpp -c -Wall
 	g++ *.o -o exec -Wall
 
 run:
@@ -11,5 +12,5 @@ run:
 	./exec
 
 clear:
-	rm *.o exec
 	clear
+	rm *.o exec

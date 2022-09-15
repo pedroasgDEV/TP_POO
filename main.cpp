@@ -1,11 +1,8 @@
 //bibliotecas
 #include <iostream>
-#include <stdlib.h>
 #include <vector>
 #include <fstream>
-#include <string>
 #include <sstream>
-#include <algorithm>
 #include <iterator>
 
 using namespace std;
@@ -17,8 +14,8 @@ using namespace std;
 Livro* newClass(string arqName);
 void split(const string&, list<string>&, char);
 
-//Função
-
+//Funções
+//Leitura do aquivo e criação dos objs
 Livro* newClass(string arqName){
     //Variaveis
     int type, ano, cols; 
@@ -101,6 +98,7 @@ Livro* newClass(string arqName){
     return livro;
 }
 
+//Separa de strings com ;
 void split(const string& str, list<string>& cont, char delim){
     stringstream ss(str);
     string token;
@@ -114,8 +112,13 @@ int main(){
     //Lendo os arqulivroivos
     for(char i = 1; i<=16; i++) livros.push_back(newClass("txts/" + to_string(i) + ".txt"));
 
-    cout << *(dynamic_cast<Audiobook*>(livros[1])) << endl;
+    //Questão B
+    //for (auto item : idiomaBusca(livros, "Espanhol")) cout << item->getTitulo() << endl;
     
+    //Questão C
+    //for(auto item : yearSort(livros, "EPUB")) cout << static_cast<Livro>(*item) << endl;
+
+
     //Liberar vetor de ponteiros
     for(auto item : livros) delete item;
     livros.clear();

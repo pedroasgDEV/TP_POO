@@ -4,6 +4,7 @@
 //Bibliotecas
 #include <iostream>
 #include <list>
+#include <vector>
 using namespace std;
 
 //Super Classe
@@ -116,4 +117,10 @@ public:
     friend ostream& operator<<(ostream&, const Audiobook&);
 };
 
+//Funções da atividade
+//B
+vector<Livro*> idiomaBusca(vector<Livro*> livros, string idioma); //Retorna um vetor com livros no edioma especificado
+
+//C
+vector<Eletronico*> yearSort(vector<Livro*> livros, string format); //Retorna um vetor de livros eletronicos em formato especificado ordenado pelo ano de publicaçaõ
 #endif

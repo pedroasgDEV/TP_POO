@@ -13,4 +13,4 @@ run:
 
 clear:
 	clear
-	rm *.o exec
+	rm *.o exec saida.txt

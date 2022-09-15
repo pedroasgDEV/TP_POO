@@ -34,3 +34,33 @@ vector<Eletronico*> yearSort(vector<Livro*> livros, string format){
     return temp;
 
 }
+
+//J: //Imprime no terminal ou em um arquivo todos os livros de uma coleção
+void imprimeVector(vector<Livro*> livros, int esc){
+    //0 - se for para imprimir no terminal
+    //1 - se for para imprimir no arquivo
+
+    if(!esc)
+        for(auto item : livros){
+            if(typeid(*item) == typeid(class Impresso))
+                cout << *(dynamic_cast<Impresso*>(item)) << endl;
+
+            else if(typeid(*item) == typeid(class Eletronico))
+                cout << *(dynamic_cast<Eletronico*>(item)) << endl;
+            else 
+                cout << *(dynamic_cast<Audiobook*>(item)) << endl;
+        }
+    
+    else{
+        ofstream arq("saida.txt", ios::out);
+        for(auto item : livros){
+            if(typeid(*item) == typeid(class Impresso))
+                arq << *(dynamic_cast<Impresso*>(item)) << endl;
+
+            else if(typeid(*item) == typeid(class Eletronico))
+                arq << *(dynamic_cast<Eletronico*>(item)) << endl;
+            else 
+                arq << *(dynamic_cast<Audiobook*>(item)) << endl;
+        }
+    }
+}

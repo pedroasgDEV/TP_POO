@@ -133,6 +133,9 @@ int main(){
     //Questão G
     //for(auto item : allKeyword(livros)) cout << item << endl;
 
+    //Questão H
+    //imprimeVector(capFilter(livros, 3), 0);
+
     //Questão j
     //imprimeVector(livros, 0);
 

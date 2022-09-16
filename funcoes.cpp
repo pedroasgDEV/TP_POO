@@ -76,6 +76,17 @@ set<string> allKeyword(vector<Livro*> livros){
     return temp;
 }
 
+//H: //Retorna um vetor ordenado com o nome do primeiro autor com no minimo a quantidade especificada de capitulos
+vector<Livro*> capFilter(vector<Livro*> livros, int qnt){
+    vector<Livro*> temp; //Cria variavel temporaria
+    for(auto item : livros) if((int) item->getCapitulos().size() >= qnt) temp.push_back(item); //Adiciona os livros com a qnt minima de cap especificados
+
+    //Ordena vetor pelo nome do primeiro autor
+    sort(temp.begin(), temp.end(), [](Livro* x, Livro* y){ return x->getEscritores().front() < y->getEscritores().front();});
+
+    return temp;
+}
+
 //J: Imprime no terminal ou em um arquivo todos os livros de uma coleção
 void imprimeVector(vector<Livro*> livros, int esc){
     //0 - se for para imprimir no terminal

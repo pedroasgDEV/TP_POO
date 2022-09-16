@@ -136,6 +136,9 @@ vector<Livro*> bookTitleSearch(vector<Livro*> livros, string bookTitle); //Pesqu
 //G
 set<string> allKeyword(vector<Livro*> livros); //Retorna um vector com todos os keywords sem repetição
 
+//H
+vector<Livro*> capFilter(vector<Livro*> livros, int qnt); //Retorna um vetor ordenado com o nome do primeiro autor com no minimo a quantidade especificada de capitulos
+
 //J
 void imprimeVector(vector<Livro*> livros, int); //Imprime no terminal ou em um arquivo todos os livros de uma coleção
 

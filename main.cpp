@@ -139,6 +139,9 @@ int main(){
     //Questão j
     //imprimeVector(livros, 0);
 
+    //Questão k
+    //cout << keywordAmount(livros, "narrativa") << endl;
+
 
     //Liberar vetor de ponteiros
     for(auto item : livros) delete item;

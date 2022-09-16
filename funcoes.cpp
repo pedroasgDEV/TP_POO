@@ -120,14 +120,12 @@ void imprimeVector(vector<Livro*> livros, int esc){
 
 //K: pesquisa livros por keywords e retorna a quantidade de livros encontrados.
 int keywordAmount(vector<Livro*> livros, string keyword){
-    vector<Livro*> item; //vector de livros.
-    vector<string> keys; //vector para keywords.
+    vector<Livro*> item; //vector de temporario livros.
 
     //pesquisa em cada livro.
-    for(vector<Livro>::iterator itr : livros){
-        keys = itr->getKeywords();
+    for(auto itr : livros){
         //pesquisa cada keyword.
-        for(vector<string>::iterator itr2 : keys){
+        for(auto itr2 : itr->getKeywords()){
             if(itr2 == keyword)
                 item.push_back(itr); //adciona o livro a colecao de livros.
         }

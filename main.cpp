@@ -118,12 +118,20 @@ int main(){
     //Questão C
     //for(auto item : yearSort(livros, "EPUB")) cout << static_cast<Livro>(*item) << endl;
 
+    //Questão D
+    //vector<Impresso*> temp = livrariasFilter(livros, 1);
+    //if(temp.size() == 0) cout << "Não encontrado\n";
+    //else for(auto item : temp) cout << item->getTitulo() << " "<< item->getLivrarias().size() << endl;
+            
     //Questão E
     //if(escritorBusca(livros, "John Ronald Reuel Tolkien")) cout << "Há um audio book com esse autor\n";
     //else cout << "Não há um audio book com esse autor\n";
 
+    //Questão G
+    for(auto item : allKeyword(livros)) cout << item << endl;
+    
     //Questão j
-    imprimeVector(livros, 0);
+    //imprimeVector(livros, 0);
 
 
     //Liberar vetor de ponteiros

@@ -35,6 +35,18 @@ vector<Eletronico*> yearSort(vector<Livro*> livros, string format){
 
 }
 
+//D: Retorna um vetor de livros impressos com mais ou o msm numer de livrarias do que o especificado
+vector<Impresso*> livrariasFilter(vector<Livro*> livros, int qnt){
+    vector<Impresso*> temp_vec; //cria uma variavel temporaria de livros
+    for(auto  item : livros)
+        if(typeid(*item) == typeid(class Impresso)){
+            Impresso* temp = dynamic_cast<Impresso*>(item);
+            if((int) temp->getLivrarias().size() >= qnt) temp_vec.push_back(temp);
+        }
+    
+    return temp_vec;
+}
+
 //E: Verifica se algum audiobook de algum escritor
 bool escritorBusca(vector<Livro*> livros, string escritor){
     //Lê todos os item do vetor
@@ -43,6 +55,13 @@ bool escritorBusca(vector<Livro*> livros, string escritor){
             for(auto item2 : item->getEscritores()) if(item2 == escritor) return true; //Procura pelo escritor 
 
     return false;   
+}
+
+//G: Retorna um set com todos os keywords sem repetição
+set<string> allKeyword(vector<Livro*> livros){
+    set<string> temp; //Cria um set temporario que não permite duplicadas
+    for(auto item : livros) for(auto item_str : item->getKeywords()) temp.insert(item_str); //Insere todos as keywords
+    return temp;
 }
 
 //J: Imprime no terminal ou em um arquivo todos os livros de uma coleção
@@ -75,5 +94,3 @@ void imprimeVector(vector<Livro*> livros, int esc){
         }
     }
 }
-
-//I

@@ -47,7 +47,7 @@ vector<Impresso*> livrariasFilter(vector<Livro*> livros, int qnt){
     return temp_vec;
 }
 
-//E: Verifica se algum audiobook de algum escritor
+//E: Verifica se há algum audiobook de algum escritor, retorna true caso haja e falso caso contrario
 bool escritorBusca(vector<Livro*> livros, string escritor){
     //Lê todos os item do vetor
     for(auto item : livros)

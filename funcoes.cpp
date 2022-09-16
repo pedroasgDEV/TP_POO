@@ -45,6 +45,18 @@ bool escritorBusca(vector<Livro*> livros, string escritor){
     return false;   
 }
 
+//F: Pesquisa livros pelo titulo e exibe informações sobre o mesmo no main.
+vector<Livro*> bookTitleSearch(vector<Livro*> livros, string bookTitle){
+    vector<Livro*> temp; //vector temporario.
+
+    //pesquisa em cada livro utilizando o for.
+    for(vector<Livro>::iterator itr : livros){
+        if(itr->getTitulo() == bookTitle) // verifica se o titulo eh igual ao titulo pesquisado.
+            temp.push_back(itr); //adciona o livro a colecao de livros com o titulo pesquisado.
+    }
+    return temp;
+}
+
 //J: Imprime no terminal ou em um arquivo todos os livros de uma coleção
 void imprimeVector(vector<Livro*> livros, int esc){
     //0 - se for para imprimir no terminal

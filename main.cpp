@@ -127,6 +127,9 @@ int main(){
     //if(escritorBusca(livros, "John Ronald Reuel Tolkien")) cout << "Há um audio book com esse autor\n";
     //else cout << "Não há um audio book com esse autor\n";
 
+    //Questão F
+    //imprimeVector(bookTitleSearch(livros, "O Senhor dos Aneis"), 0);
+
     //Questão G
     //for(auto item : allKeyword(livros)) cout << item << endl;
 

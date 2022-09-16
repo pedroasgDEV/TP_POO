@@ -130,6 +130,9 @@ vector<Impresso*> livrariasFilter(vector<Livro*> livros, int qnt); //Retorna um 
 //E
 bool escritorBusca(vector<Livro*> livros, string escritor); //Verifica se algum audiobook de algum escritor
 
+//F
+vector<Livro*> bookTitleSearch(vector<Livro*> livros, string bookTitle); //Pesquisa livros pelo titulo e exibe informações sobre o mesmo no main.
+
 //G
 set<string> allKeyword(vector<Livro*> livros); //Retorna um vector com todos os keywords sem repetição
 

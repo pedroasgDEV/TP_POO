@@ -57,6 +57,18 @@ bool escritorBusca(vector<Livro*> livros, string escritor){
     return false;   
 }
 
+//F: Pesquisa livros pelo titulo e exibe informações sobre o mesmo no main.
+vector<Livro*> bookTitleSearch(vector<Livro*> livros, string bookTitle){
+    vector<Livro*> temp; //vector temporario.
+
+    //pesquisa em cada livro utilizando o for.
+    for(auto itr : livros){
+        if(itr->getTitulo() == bookTitle) // verifica se o titulo eh igual ao titulo pesquisado.
+            temp.push_back(itr); //adciona o livro a colecao de livros com o titulo pesquisado.
+    }
+    return temp;
+}
+
 //G: Retorna um set com todos os keywords sem repetição
 set<string> allKeyword(vector<Livro*> livros){
     set<string> temp; //Cria um set temporario que não permite duplicadas

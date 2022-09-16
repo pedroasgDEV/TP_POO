@@ -128,8 +128,8 @@ int main(){
     //else cout << "Não há um audio book com esse autor\n";
 
     //Questão G
-    for(auto item : allKeyword(livros)) cout << item << endl;
-    
+    //for(auto item : allKeyword(livros)) cout << item << endl;
+
     //Questão j
     //imprimeVector(livros, 0);
 

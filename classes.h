@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
+#include <iterator>
 using namespace std;
 
 //Super Classe
@@ -128,7 +129,7 @@ vector<Eletronico*> yearSort(vector<Livro*> livros, string format); //Retorna um
 vector<Impresso*> livrariasFilter(vector<Livro*> livros, int qnt); //Retorna um vetor de livros impressos com mais ou o msm numer de livrarias do que o especificado
 
 //E
-bool escritorBusca(vector<Livro*> livros, string escritor); //Verifica se há algum audiobook de algum escritor
+bool escritorBusca(vector<Livro*> livros, string escritor); //Verifica se há algum audiobook de algum escritor, retorna true caso haja e falso caso contrario
 
 //F
 vector<Livro*> bookTitleSearch(vector<Livro*> livros, string bookTitle); //Pesquisa livros pelo titulo e exibe informações sobre o mesmo no main.
@@ -139,14 +140,16 @@ set<string> allKeyword(vector<Livro*> livros); //Retorna um vector com todos os 
 //H
 vector<Livro*> capFilter(vector<Livro*> livros, int qnt); //Retorna um vetor ordenado com o nome do primeiro autor com no minimo a quantidade especificada de capitulos
 
+//I 
+vector<Livro*> tituloBusca(vector<Livro*> livros, string titulo); //Retorna interadores com os tipos de livros com o titulo especificado
+
 //J
 void imprimeVector(vector<Livro*> livros, int); //Imprime no terminal ou em um arquivo todos os livros de uma coleção
 
 //K
 int keywordAmount(vector<Livro*> livros, string keyword); //Pesquisa livros por keywords e retorna a quantidade de livros encontrados.
 
-
-
-
+//L
+vector<Livro*> altIdioma(vector<Livro*> livros); //Função que altera o formato dos idiomas
 
 #endif

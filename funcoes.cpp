@@ -87,6 +87,13 @@ vector<Livro*> capFilter(vector<Livro*> livros, int qnt){
     return temp;
 }
 
+//I: Retorna interadores com os tipos de livros com o titulo especificado
+vector<Livro*> tituloBusca(vector<Livro*> livros, string titulo){
+    vector<Livro*> temp; //Cria vetor temporario
+    for(auto item : livros) if(item->getTitulo() == titulo) temp.push_back(item); //Busca os interadores dos 
+    return temp;
+}
+
 //J: Imprime no terminal ou em um arquivo todos os livros de uma coleção
 void imprimeVector(vector<Livro*> livros, int esc){
     //0 - se for para imprimir no terminal
@@ -131,4 +138,18 @@ int keywordAmount(vector<Livro*> livros, string keyword){
         }
     }
     return item.size();
+}
+
+//L: Função que altera o formato dos idiomas
+vector<Livro*> altIdioma(vector<Livro*> livros){
+    //Vasculha os objs e altera o idioma
+    for ( auto item : livros){
+        if(item->getIdiomaOriginal() == "Ingles") item->setIdiomaOriginal("ENG");
+        if(item->getIdiomaOriginal() == "Espanhol") item->setIdiomaOriginal("ESP");
+        if(item->getIdiomaOriginal() == "Frances") item->setIdiomaOriginal("FRS");
+        if(item->getIdiomaOriginal() == "Portugues") item->setIdiomaOriginal("POT");
+
+    }
+
+    return livros;
 }
